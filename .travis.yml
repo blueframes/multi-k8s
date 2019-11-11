@@ -19,7 +19,7 @@ before_install:
   - echo "$DPASS" | docker login -u "$DUSER" --password-stdin
   # - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   # - docker login -u $DUSER -p $DPASS
-  - docker build -t bluelightskd/react-test -f ./client/Dockerfile.dev
+  - docker build -t "$DUSER"/react-test -f ./client/Dockerfile.dev
 
 script:
   - docker run stephengrider/react-test npm test -- --coverage
