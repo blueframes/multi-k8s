@@ -17,5 +17,5 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t bluelightskd/react-test -f ./client/Dockerfile.dev
 
-  script:
-    - docker run bluelightskd/react-test npm test -- --coverage
+script:
+  - docker run bluelightskd/react-test npm test -- --coverage
