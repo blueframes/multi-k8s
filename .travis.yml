@@ -16,9 +16,9 @@ before_install:
   - gcloud config set compute/zone asia-south1-a
   - gcloud container clusters get-credentials  multi-cluster
   - docker logout
-  # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DPASS" | docker login -u "$DUSER" --password-stdin
   # - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  # - docker login -u $DUSER -p $DPASS
   - docker build -t bluelightskd/react-test -f ./client/Dockerfile.dev
 
 script:
