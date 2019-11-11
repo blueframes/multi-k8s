@@ -15,7 +15,7 @@ before_install:
   - gcloud config set project tuc-learning
   - gcloud config set compute/zone asia-south1-a
   - gcloud container clusters get-credentials  multi-cluster
-  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
   # - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker build -t bluelightskd/react-test -f ./client/Dockerfile.dev
 
